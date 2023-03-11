@@ -1,10 +1,8 @@
 import { useEffect } from 'react';
 import { lazy } from 'react';
 import { ContactUlCss, ContactItemCss } from './ContactList.styled';
-import Spinner from 'components/Spinner';
-import { useGetAllContactsQuery } from 'redux/tasks/cont-slice';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectAllContacts, selectFilteredContacts } from 'redux/tasks/cont-selectors';
+import { selectFilteredContacts } from 'redux/tasks/cont-selectors';
 import { fetchAllContacts } from 'redux/tasks/taskoperations';
 
 const ContactItem = lazy(() => import('./ContactItem'));

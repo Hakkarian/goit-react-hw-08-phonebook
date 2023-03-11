@@ -1,5 +1,4 @@
 import {
-  ButtonCss,
   CenterCss,
   FormCss,
   TitleCss,
@@ -10,11 +9,10 @@ import { signin } from 'redux/auth/auth-operations';
 import { selectIsUserLogin } from 'redux/auth/auth-selectors';
 import fields from 'shared/utils/fields';
 import { useForm } from 'shared/utils/hooks';
-import Password from 'shared/components/Password';
+
 import {
   AuthButtonCss,
   InputCss,
-  PasswordCss,
 } from 'shared/components/Password/Password.styled';
 
 const LoginView = () => {

@@ -1,7 +1,6 @@
 import styled from '@emotion/styled';
 import { OutlinedInput, TextField } from '@mui/material';
 import { ButtonCss } from 'components/App/App.styled';
-import Password from './Password';
 
 export const InputCss = styled(TextField)`
   margin-bottom: 20px;

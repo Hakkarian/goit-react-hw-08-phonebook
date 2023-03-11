@@ -1,4 +1,4 @@
-import { ButtonCss, TitleCss } from "components/App/App.styled";
+import { ButtonCss } from "components/App/App.styled";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { logout } from "redux/auth/auth-operations";

@@ -2,12 +2,11 @@ import PrivateRoute from "views/PrivateView";
 import { lazy, Suspense } from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Navigate, Route, Routes, useNavigate } from "react-router-dom";
-import { checkUpdate, signin } from "redux/auth/auth-operations";
+import { Route, Routes } from "react-router-dom";
+import { checkUpdate } from "redux/auth/auth-operations";
 import { Container, SpinnerWrap } from "./App.styled";
 import AppBar from "./AppBar";
 import PublicView from "views/PublicView";
-import { SpinnerCss } from "components/Spinner/Spinner.styled";
 import Spinner from "components/Spinner";
 
 const HomeView = lazy(() => import("../../views/HomeView"));

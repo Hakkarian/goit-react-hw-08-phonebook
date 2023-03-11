@@ -1,5 +1,5 @@
 import { CenterCss } from "components/App/App.styled";
-import { HomeContainerCss, HomeTitleCss } from "./HomeView.styled"
+import { HomeTitleCss } from "./HomeView.styled"
 
 
 const HomeView = () => {

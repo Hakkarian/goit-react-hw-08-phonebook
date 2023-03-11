@@ -1,5 +1,4 @@
 import toastr from 'toastr';
-import { ButtonCss } from 'components/App/App.styled';
 
 import PropTypes from 'prop-types';
 

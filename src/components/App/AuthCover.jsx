@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
 import { checkUpdate } from "redux/auth/auth-operations";
 
 

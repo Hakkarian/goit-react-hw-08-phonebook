@@ -1,7 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { selectFilter } from 'redux/filters/filter-selectors';
 import { filterSlice } from 'redux/filters/filter-slice';
-import { contactsSlice } from 'redux/tasks/cont-slice';
 import { InputCss } from 'shared/components/Password/Password.styled';
 
 const Filter = () => {

@@ -1,4 +1,4 @@
-const { useState } = require("react")
+import { useState } from "react";
 
 export const useForm = (initialState, onSubmit) => {
     const [state, setState] = useState({...initialState});

@@ -1,9 +1,6 @@
 
 import {LineWave} from 'react-loader-spinner'
-import { selectError, selectIsLoading } from "redux/tasks/cont-selectors";
-import { useSelector } from "react-redux";
-import { SpinnerCss } from './Spinner.styled';
-import { selectIsUserLoads } from 'redux/auth/auth-selectors';
+
 
 const Spinner = () => {
 

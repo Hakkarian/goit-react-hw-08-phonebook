@@ -11,6 +11,8 @@ export const ContactFormCss = styled.form`
   width: 250px;
   padding: 20px;
 
+  margin-top: 100px;
+
   font-size: 14px;
   font-weight: 600;
   line-height: 1;
