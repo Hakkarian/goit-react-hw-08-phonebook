@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Navigate, Route, Routes, useNavigate } from "react-router-dom";
 import { checkUpdate, signin } from "redux/auth/auth-operations";
-import { Container } from "./App.styled";
+import { Container, SpinnerWrap } from "./App.styled";
 import AppBar from "./AppBar";
 import PublicView from "views/PublicView";
 import { SpinnerCss } from "components/Spinner/Spinner.styled";
@@ -24,6 +24,7 @@ const App = () => {
 
   useEffect(() => {
     dispatch(checkUpdate());
+    document.title = "GotThought"
   }, []);
 
 
@@ -32,7 +33,7 @@ const App = () => {
     <>
       <AppBar />
       <Container>
-        <Suspense fallback={<Spinner />}>
+        <Suspense fallback={<SpinnerWrap><Spinner /></SpinnerWrap>}>
           <Routes>
             <Route path="/" element={<HomeView />} />
             <Route element={<PublicView />}>

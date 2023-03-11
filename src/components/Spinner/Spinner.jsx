@@ -6,23 +6,18 @@ import { SpinnerCss } from './Spinner.styled';
 import { selectIsUserLoads } from 'redux/auth/auth-selectors';
 
 const Spinner = () => {
-    const isLoading = useSelector(selectIsUserLoads);
-    const error = useSelector(selectError);
-    return <>
-        {error && <h1>An error occured while rendering your page</h1>}
-        
-        {isLoading && <LineWave 
-            position="absolute"
+
+    return <LineWave 
     height = "800"
     width = "800"
     radius = "9"
-    color = "black"
+    color = "yellow"
     ariaLabel = "loading"
     wrapperStyle
     wrapperClass
-        />}
+        />
 
-    </>
+
 }
 
 export default Spinner

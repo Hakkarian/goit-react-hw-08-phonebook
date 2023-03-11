@@ -2,7 +2,7 @@ const { default: styled } = require("@emotion/styled");
 
 
 export const Container = styled.div`
-    padding: 100px 20px;
+    padding: 0px 20px;
     margin: 0 auto;
 `;
 
@@ -75,3 +75,10 @@ export const ButtonCss = styled.button`
     color: #fff200;
   }
 `;
+
+export const SpinnerWrap = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-25%, -50%);
+`

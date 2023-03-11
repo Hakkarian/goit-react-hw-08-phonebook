@@ -3,6 +3,8 @@ import { NavLink } from "react-router-dom";
 
 export const HeaderCss = styled.header`
     position: fixed;
+    top: 0;
+    z-index: 2;
     width: 100vw;
     height: 70px;
     display: flex;
@@ -33,7 +35,7 @@ export const NavLinkCss = styled(NavLink)`
     width: 100%;
     height: 3px;
     margin-top: 3px;
-    background-color: orange;
+    background-color: yellow;
     transform: scale(0);
 
     transition: transform 250ms linear;
@@ -44,6 +46,6 @@ export const NavLinkCss = styled(NavLink)`
 
 
   &.active {
-    color: orange;
+    color: yellow;
   }
 `;
