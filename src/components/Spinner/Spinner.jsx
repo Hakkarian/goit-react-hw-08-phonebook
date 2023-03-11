@@ -13,8 +13,7 @@ const Spinner = () => {
     radius = "9"
     color = "yellow"
     ariaLabel = "loading"
-    wrapperStyle
-    wrapperClass
+
         />
 
 

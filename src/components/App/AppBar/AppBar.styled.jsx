@@ -44,7 +44,6 @@ export const NavLinkCss = styled(NavLink)`
     transform: scale(1);
   }
 
-
   &.active {
     color: yellow;
   }

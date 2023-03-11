@@ -24,7 +24,6 @@ const App = () => {
 
   useEffect(() => {
     dispatch(checkUpdate());
-    document.title = "GotThought"
   }, []);
 
 
