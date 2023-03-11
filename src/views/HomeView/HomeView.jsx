@@ -1,10 +1,13 @@
+import { CenterCss } from "components/App/App.styled";
 import { HomeContainerCss, HomeTitleCss } from "./HomeView.styled"
 
 
 const HomeView = () => {
-    return <HomeContainerCss>
+    return (
+      <CenterCss>
         <HomeTitleCss>Welcome, stranger!</HomeTitleCss>
-    </HomeContainerCss>
+      </CenterCss>
+    );
 }
 
 export default HomeView;

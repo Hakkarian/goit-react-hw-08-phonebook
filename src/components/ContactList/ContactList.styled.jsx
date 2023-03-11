@@ -3,21 +3,24 @@ import styled from "@emotion/styled";
 
 export const ContactUlCss = styled.ul`
     display: inline-flex;
+    flex-wrap: wrap;
     gap: 30px;
+
     flex-wrap: wrap;
 `
 
 export const ContactItemCss = styled.li`
   display: inline-flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   
-  min-width: calc((100% - 4 * 15px) / 4);
+  min-width: calc(50% - 2 * 20px);
   height: 60px;
   padding: 10px;
 
-  background-color: #e5e5e5;
+  background-color: #313131;
+  color: #fff;
 
   border-radius: 5px;
   box-shadow: 2px 2px 2px 2px #303030;
@@ -26,7 +29,7 @@ export const ContactItemCss = styled.li`
 
   &:hover,
   &:focus {
-    background-color: #949494;
-    box-shadow: 3px 3px 3px 3px #303030;
+    background-color: #000;
+    box-shadow: 0px 0px 0px 0px #303030;
   }
 `;

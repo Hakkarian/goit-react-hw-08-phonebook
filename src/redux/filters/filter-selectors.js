@@ -1,2 +1,2 @@
-export const getFilter = ({ filter }) => filter;
+export const selectFilter = ({ filter }) => filter;
 

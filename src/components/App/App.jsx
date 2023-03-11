@@ -1,26 +1,50 @@
-import ContactForm from "components/ContactForm";
-import ContactList from "components/ContactList";
-import Filter from "components/Filter";
-import { Route, Routes } from "react-router-dom";
-import ContactsView from "views/ContactsView";
-import HomeView from "views/HomeView";
-import LoginView from "views/LoginView";
-import RegisterView from "views/RegisterView";
-import { ContactFlexCss } from "./App.styled";
+import PrivateRoute from "views/PrivateView";
+import { lazy, Suspense } from "react";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Navigate, Route, Routes, useNavigate } from "react-router-dom";
+import { checkUpdate, signin } from "redux/auth/auth-operations";
+import { Container } from "./App.styled";
 import AppBar from "./AppBar";
+import PublicView from "views/PublicView";
+import { SpinnerCss } from "components/Spinner/Spinner.styled";
+import Spinner from "components/Spinner";
 
-
+const HomeView = lazy(() => import("../../views/HomeView"));
+const ContactsView = lazy(() => import("../../views/ContactsView"));
+const LoginView = lazy(() => import("../../views/LoginView"));
+const RegisterView = lazy(() => import("../../views/RegisterView"));
 
 const App = () => {
+  const state = useSelector(state => state);
 
-  return (<>
-    <AppBar />
-    <Routes>
-      <Route path="/" element={HomeView} />
-      <Route path="/login" element={LoginView} />
-      <Route path="/registration" element={RegisterView}/>
-      <Route path="/contacts" element={ContactsView}/>
-    </Routes>
+  console.log(state);
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(checkUpdate());
+  }, []);
+
+
+
+  return (
+    <>
+      <AppBar />
+      <Container>
+        <Suspense fallback={<Spinner />}>
+          <Routes>
+            <Route path="/" element={<HomeView />} />
+            <Route element={<PublicView />}>
+              <Route path="/login" element={<LoginView />} />
+              <Route path="/registration" element={<RegisterView />} />
+            </Route>
+            <Route element={<PrivateRoute />}>
+              <Route path="/contacts" element={<ContactsView />} />
+            </Route>
+          </Routes>
+        </Suspense>
+      </Container>
     </>
   );
 };

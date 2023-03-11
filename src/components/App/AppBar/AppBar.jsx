@@ -1,18 +1,23 @@
-import ContactForm from "components/ContactForm";
-import ContactList from "components/ContactList";
-import Filter from "components/Filter";
-import { ContactFlexCss } from "../App.styled";
+
+import { useSelector } from "react-redux";
+import { selectIsUserLogin } from "redux/auth/auth-selectors";
+import { HeaderCss, NavLinkCss } from "./AppBar.styled";
+import AuthMenu from "./menus/AuthMenu";
+import ProjectsMenu from "./menus/ProjectsMenu";
+import UserMenu from "./menus/UserMenu";
 
 const AppBar = () => {
+  const isLogin = useSelector(selectIsUserLogin)
 
     return (
-      <ContactFlexCss>
-        <h1>Phonebook</h1>
-        <ContactForm />
-        <h2>Contacts</h2>
-        <Filter />
-        <ContactList />
-      </ContactFlexCss>
+      <HeaderCss>
+        <NavLinkCss to="/">
+          <img src="../../../images/170.png" alt="Global Transform" width="50" />
+        </NavLinkCss>
+
+        <ProjectsMenu />
+        {!isLogin ? <AuthMenu /> : <UserMenu />}
+      </HeaderCss>
     );
 }
 

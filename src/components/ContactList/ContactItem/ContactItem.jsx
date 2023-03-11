@@ -3,7 +3,7 @@ import { ButtonCss } from 'components/App/App.styled';
 
 import PropTypes from 'prop-types';
 
-import { ContactTextCss } from './ContactItem.styled';
+import { ContactTextCss, DeleteButtonCss } from './ContactItem.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchdDeleteContact } from 'redux/tasks/taskoperations';
 import { selectIsLoading } from 'redux/tasks/cont-selectors';
@@ -21,7 +21,7 @@ const ContactItem = ({ id, name, number }) => {
 
   return <>
     <ContactTextCss>{name}: {number}</ContactTextCss>
-    <ButtonCss type='button' onClick={() => handleDeleteContact(id)} disabled={isLoading}>Delete</ButtonCss>
+    <DeleteButtonCss type='button' onClick={() => handleDeleteContact(id)} disabled={isLoading}>Delete</DeleteButtonCss>
   </>
 }
 

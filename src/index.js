@@ -1,24 +1,25 @@
 import App from 'components/App';
-import { Container } from 'components/App/App.styled';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import { Provider } from 'react-redux';
-import { store} from 'redux/store';
+import { persistor, store} from 'redux/store';
 import { BrowserRouter } from 'react-router-dom';
+import { PersistGate } from 'redux-persist/integration/react';
+import AuthCover from 'components/App/AuthCover';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      {/* <PersistGate loading={null} persistor={persistor}> */}
-      <BrowserRouter basename="/goit-react-hw-08-phonebook">
-        <Container>
+      <PersistGate loading={null} persistor={persistor}>
+      <AuthCover>
+        <BrowserRouter basename="/goit-react-hw-08-phonebook">
           <App />
-        </Container>
-      </BrowserRouter>
-      {/* </PersistGate> */}
+        </BrowserRouter>
+      </AuthCover>
+      </PersistGate>
     </Provider>
   </React.StrictMode>
 );
