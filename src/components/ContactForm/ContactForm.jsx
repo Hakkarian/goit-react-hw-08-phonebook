@@ -14,6 +14,7 @@ import { selectAllContacts } from 'redux/tasks/cont-selectors';
 import { fetchAddContacts } from 'redux/tasks/taskoperations';
 import { InputCss } from 'shared/components/Password/Password.styled';
 import fields from 'shared/utils/fields';
+import { toast } from 'react-hot-toast';
 
 const ContactForm = () => {
   const contacts = useSelector(selectAllContacts);
@@ -49,7 +50,14 @@ const ContactForm = () => {
     }
     console.log(payload);
     dispatch(fetchAddContacts(payload));
-    toastr.success('Created!');
+    toast('A contact was created succefully!', {
+      icon: '✔️',
+      style: {
+        borderRadius: '10px',
+        background: 'black',
+        color: '#fff',
+      },
+    });
     reset();
   };
   const reset = () => {

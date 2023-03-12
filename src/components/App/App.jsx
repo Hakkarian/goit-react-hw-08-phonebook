@@ -8,8 +8,11 @@ import { Container, SpinnerWrap } from "./App.styled";
 import AppBar from "./AppBar";
 import PublicView from "views/PublicView";
 import Spinner from "components/Spinner";
+import { Toaster } from "react-hot-toast";
+
 
 const HomeView = lazy(() => import("../../views/HomeView"));
+const ErrorView = lazy(() => import("../../views/ErrorView"))
 const ContactsView = lazy(() => import("../../views/ContactsView"));
 const LoginView = lazy(() => import("../../views/LoginView"));
 const RegisterView = lazy(() => import("../../views/RegisterView"));
@@ -29,9 +32,18 @@ const App = () => {
 
   return (
     <>
+      <div>
+        <Toaster />
+      </div>
       <AppBar />
       <Container>
-        <Suspense fallback={<SpinnerWrap><Spinner /></SpinnerWrap>}>
+        <Suspense
+          fallback={
+            <SpinnerWrap>
+              <Spinner />
+            </SpinnerWrap>
+          }
+        >
           <Routes>
             <Route path="/" element={<HomeView />} />
             <Route element={<PublicView />}>
@@ -41,6 +53,7 @@ const App = () => {
             <Route element={<PrivateRoute />}>
               <Route path="/contacts" element={<ContactsView />} />
             </Route>
+            <Route path="*" element={<ErrorView />} />
           </Routes>
         </Suspense>
       </Container>

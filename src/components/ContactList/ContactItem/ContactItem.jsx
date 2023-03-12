@@ -6,6 +6,7 @@ import { ContactTextCss, DeleteButtonCss } from './ContactItem.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchdDeleteContact } from 'redux/tasks/taskoperations';
 import { selectIsLoading } from 'redux/tasks/cont-selectors';
+import { toast } from 'react-hot-toast';
 
 const ContactItem = ({ id, name, number }) => {
   const dispatch = useDispatch();
@@ -15,7 +16,14 @@ const ContactItem = ({ id, name, number }) => {
 
   const handleDeleteContact = (id) => {
     dispatch(fetchdDeleteContact(id));
-    toastr.success("Deleted!")
+    toast('A contact was deleted succefully!', {
+      icon: '❌',
+      style: {
+        borderRadius: '10px',
+        background: 'black',
+        color: '#fff',
+      },
+    });
   }
 
   return <>
